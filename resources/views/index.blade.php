@@ -16,7 +16,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
-    <title>ST Johns Register</title>
+    <title>ST John Register</title>
   </head>
   <body>
   
@@ -30,7 +30,7 @@
             <div style="text-align: center;">
                 <img src="{{ asset('assets/images/stjohn.jpg') }}" alt="Logo">
         
-                <h3>Welcome to ST Johns Ambulance HQ</h3>
+                <h3>Welcome to ST John Ambulance HQ</h3>
             </div>
             <h2>Kindly feel in your details bellow</h2>
 

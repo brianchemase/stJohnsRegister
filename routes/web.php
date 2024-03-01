@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VisitorController;
 
+use App\Http\Controllers\CertificatesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +26,8 @@ Route::post('/submit-form', [VisitorController::class, 'store'])->name('submit-f
 //Route::get('/visitors', function () {    return view('visitors');});
 
 Route::get('/visitors', [VisitorController::class, 'showVisitors']);
+
+Route::get('/ViewCert', [CertificatesController::class, 'MakeCertificate']);
+
+Route::get('/GetCert', [CertificatesController::class, 'getcertificate']);
+Route::post('/GetCerts', [CertificatesController::class, 'getcert'])->name('generate-cert');
