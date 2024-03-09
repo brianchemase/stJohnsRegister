@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VisitorController;
 
 use App\Http\Controllers\CertificatesController;
+use App\Http\Controllers\TrainingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,13 @@ Route::get('/ViewCert', [CertificatesController::class, 'MakeCertificate']);
 
 Route::get('/GetCert', [CertificatesController::class, 'getcertificate']);
 Route::post('/GetCerts', [CertificatesController::class, 'getcert'])->name('generate-cert');
+
+
+Route::group(['prefix' => 'training'], function() {
+
+    Route::get('/', [TrainingController::class, 'home'])->name('hometraining');
+    // Route::get('/forms', [DashboardOneController::class, 'form'])->name('dashoneform');
+    // Route::get('/Table', [DashboardOneController::class, 'table'])->name('dashonetable');
+    // Route::get('/blank', [DashboardOneController::class, 'home'])->name('dashoneblank');
+    // Route::get('/formtable', [DashboardOneController::class, 'formtable'])->name('dashoneformtable');
+});
