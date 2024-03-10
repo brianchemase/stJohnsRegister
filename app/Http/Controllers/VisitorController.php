@@ -68,9 +68,9 @@ class VisitorController extends Controller
             "message" => $message,
         ];
 
-        $apikey="6bffdc7405dd019325db9cfe3ec093e0";
-        $shortcode="TextSMS";
-        $partnerID="6712";
+        $apikey="e9e34425b54b697792a9d4ebe61acdd6";
+        $shortcode="STJOHNKENYA";
+        $partnerID="9907";
         $serviceId=0;
 
                 $smsdata=array(
