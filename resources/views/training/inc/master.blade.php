@@ -14,7 +14,7 @@
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-	<title>TerraMoni || Agents</title>
+	<title>STJohnKe || Training</title>
 
 	<!-- <link href="css/app.css" rel="stylesheet"> -->
     <link href="{{asset('dash/css/app.css')}}" rel="stylesheet">
@@ -26,20 +26,21 @@
 	<!-- BEGIN SETTINGS -->
 	<!-- <script src="{{asset('dash/js/settings.js')}}"></script> -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-10"></script>
 </head>
 
 <body data-theme="light">
 	<div class="wrapper">
 
         <!-- side bar start -->
-              @include('agents_portal.inc.sidebar')
+              @include('training.inc.sidebar')
          <!-- side bar end -->
 
 		<div class="main">
 
             <!-- top bar link -->
 
-            @include('agents_portal.inc.header')
+            @include('training.inc.header')
 			
             <!-- end of top bar -->
 
@@ -47,12 +48,12 @@
 
 			
 
-            @include('agents_portal.inc.footer')
+            @include('training.inc.footer')
             
 		</div>
 	</div>
 
-	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{asset('dash/js/app.js')}}"></script>
 	<script src="{{asset('dash/js/datatables.js')}}"></script>
 	<script type="text/javascript" src="auth/js/vanilla-tilt.js"></script>
@@ -88,6 +89,7 @@
 			});
 		});
 	</script>
+	
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

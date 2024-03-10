@@ -37,8 +37,17 @@ Route::post('/GetCerts', [CertificatesController::class, 'getcert'])->name('gene
 Route::group(['prefix' => 'training'], function() {
 
     Route::get('/', [TrainingController::class, 'home'])->name('hometraining');
+    Route::get('/StudentsTable', [TrainingController::class, 'Studenttable'])->name('Studentstable');
+    Route::post('/students/register', [TrainingController::class, 'registerstudent'])->name('register.student');
+
+
+    Route::get('/RegisterStation', [TrainingController::class, 'registerTrainingStations'])->name('registerTrainingStations');
+    Route::post('/register-training-station', [TrainingController::class, 'savetrainingstation'])->name('register.training.station');
+
+    Route::get('/EnrolmentTab', [TrainingController::class, 'StudentEnrolmenttab'])->name('StudentEnrolmenttab');
+
     // Route::get('/forms', [DashboardOneController::class, 'form'])->name('dashoneform');
-    // Route::get('/Table', [DashboardOneController::class, 'table'])->name('dashonetable');
-    // Route::get('/blank', [DashboardOneController::class, 'home'])->name('dashoneblank');
+    Route::get('/Table', [TrainingController::class, 'table'])->name('dashonetable');
+    // Route::get('/blank', [TrainingController::class, 'blank'])->name('dashoneblank');
     // Route::get('/formtable', [DashboardOneController::class, 'formtable'])->name('dashoneformtable');
 });

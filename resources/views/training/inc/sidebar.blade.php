@@ -1,44 +1,45 @@
 <nav id="sidebar" class="sidebar">
     <div class="sidebar-content js-simplebar">
         <a class="sidebar-brand" href="{{route('hometraining')}}">
-            <img src="{{asset('logo/stjohn.jpg')}}" alt="Logo" width="100" height="60"><br>
+            <img src="{{asset('logo/stjohn.jpg')}}" alt="Logo" width="140" height="60"><br>
             <span class="align-middle">ST John Ambulance</span>
         </a>
 
         <ul class="sidebar-nav">
             <li class="sidebar-header">
-                Pages
+                Main
             </li>
-            <li class="sidebar-item active">
-                <a data-target="#dashboards" data-toggle="collapse" class="sidebar-link">
+            <li class="sidebar-item {{ Route::currentRouteName() === 'hometraining' ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{route('hometraining')}}">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboards</span>
                 </a>
-                <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar">
-                    <li class="sidebar-item active"><a class="sidebar-link" href="index-2.html">Analytics</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="dashboard-ecommerce.html">E-Commerce <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="dashboard-crypto.html">Crypto <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
+            </li>
+
+            <li class="sidebar-header">
+                Training tabs
+            </li>
+
+        
+
+            <li class="sidebar-item">
+                <a data-target="#training" data-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Training Functions</span>
+                </a>
+                <ul id="training" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('Studentstable')}}">Students Registration</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('StudentEnrolmenttab')}}">Student Enrolment </a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('registerTrainingStations')}}">Training Station Registration </a></li>
+                    
                 </ul>
             </li>
 
-            <li class="sidebar-item">
-                <a data-target="#pages" data-toggle="collapse" class="sidebar-link collapsed">
-                    <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Pages</span>
-                </a>
-                <ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-settings.html">Settings</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-projects.html">Projects <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-clients.html">Clients <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-pricing.html">Pricing <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-chat.html">Chat <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-blank.html">Blank Page</a></li>
-                </ul>
+
+            <li class="sidebar-header">
+                Certifications
             </li>
+
+
+
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="pages-profile.html">
