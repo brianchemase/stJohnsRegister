@@ -41,7 +41,7 @@
 
 
 
-            <li class="sidebar-item">
+            {{-- <li class="sidebar-item">
                 <a class="sidebar-link" href="pages-profile.html">
                     <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
                 </a>
@@ -186,7 +186,7 @@
                     <li class="sidebar-item"><a class="sidebar-link" href="maps-vector.html">Vector Maps <span
                                 class="sidebar-badge badge bg-primary">Pro</span></a></li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li class="sidebar-item">
                 <a data-target="#multi" data-toggle="collapse" class="sidebar-link collapsed">
