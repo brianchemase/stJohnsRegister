@@ -46,6 +46,9 @@ Route::group(['prefix' => 'training'], function() {
 
     Route::get('/EnrolmentTab', [TrainingController::class, 'StudentEnrolmenttab'])->name('StudentEnrolmenttab');
 
+
+    Route::get('/CertifiedStudents', [CertificatesController::class, 'CertificiedStudents'])->name('CertificiedStudents');
+
     // Route::get('/forms', [DashboardOneController::class, 'form'])->name('dashoneform');
     Route::get('/Table', [TrainingController::class, 'table'])->name('dashonetable');
     // Route::get('/blank', [TrainingController::class, 'blank'])->name('dashoneblank');

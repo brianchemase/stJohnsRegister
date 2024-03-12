@@ -154,4 +154,21 @@ class CertificatesController extends Controller
                 return redirect()->back()->with('error', "No record found for ID: $id_no");
             }
     }
+
+
+
+    public function CertificiedStudents()
+    {
+        $contributions="";
+        $students = DB::table('certified_members')->get();
+        //return $students;
+
+        $data=[
+            'contributions' => $contributions,
+            'students' => $students, 
+            
+        ];
+
+        return view('training.CertifiedStudents')->with($data);
+    }
 }

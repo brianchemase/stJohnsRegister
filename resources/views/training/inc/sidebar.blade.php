@@ -38,6 +38,12 @@
                 Certifications
             </li>
 
+            <li class="sidebar-item {{ Route::currentRouteName() === 'CertificiedStudents' ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{route('CertificiedStudents')}}">
+                    <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Certified Students</span>
+                </a>
+            </li>
+
 
 
 
