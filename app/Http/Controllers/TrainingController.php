@@ -11,12 +11,16 @@ class TrainingController extends Controller
 
     public function home()
     {
-        $contributions="";
+        $contributions="100";
         $students = DB::table('tbl_students_data')->get();
+        $totalStudentsRegistered = DB::table('tbl_students_data')->count();
+        $trainingStations = DB::table('tbl_training_stations')->count();
 
         $data=[
             'contributions' => $contributions,
             'students' => $students,
+            'totalStudentsRegistered' => $totalStudentsRegistered,
+            'trainingStations' => $trainingStations,
             
 
         ];

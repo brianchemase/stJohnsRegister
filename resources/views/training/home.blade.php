@@ -10,19 +10,84 @@
 
 		<div class="row mb-2 mb-xl-3">
 			<div class="col-auto d-none d-sm-block">
-				<h3><strong>Analytics</strong> Dashboard</h3>
+				<h3><strong>Training Analytics</strong> Dashboard</h3>
 			</div>
 
 			<div class="col-auto ml-auto text-right mt-n1">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-						<li class="breadcrumb-item"><a href="#">AdminKit</a></li>
+						<li class="breadcrumb-item"><a href="#">Training Home</a></li>
 						<li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Analytics</li>
+						
 					</ol>
 				</nav>
 			</div>
 		</div>
+
+		<div class="col-md-12">
+			<div class="row ">
+				<div class="col-xl-4 col-lg-6" data-tilt>
+					<div class="card l-bg-cherry">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large"><i class="fas fa-user-alt"></i></div>
+							<div class="mb-4">
+								<h5 class="card-title mb-0" style="color: white;">Students Registered</h5>
+							</div>
+							<div class="row align-items-center mb-2 d-flex">
+								<div class="col-8">
+									<h2 class="d-flex align-items-center mb-0" style="color: white;">
+										{{ number_format($totalStudentsRegistered) }} Students
+									</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6" data-tilt>
+					<div class="card l-bg-cherry">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+							<div class="mb-4">
+								<h5 class="card-title mb-0" style="color: white;">Revenue Earnings</h5>
+							</div>
+							<div class="row align-items-center mb-2 d-flex">
+								<div class="col-8">
+									<h2 class="d-flex align-items-center mb-0" style="color: white;">
+										KSh {{ number_format($contributions, 2) }}
+									</h2>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+
+				
+
+				<div class="col-xl-4 col-lg-6" data-tilt>
+					<div class="card l-bg-orange-dark">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large"><i class="fas fa-mobile-alt"></i></div>
+							<div class="mb-4">
+								<h5 class="card-title mb-0" style="color: white;">Training Station</h5>
+							</div>
+							<div class="row align-items-center mb-2 d-flex">
+								<div class="col-8">
+									<h2 class="d-flex align-items-center mb-0" style="color: white;">
+									{{ number_format($trainingStations) }}
+									</h2>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-xl-6 col-xxl-5 d-flex">
 				<div class="w-100">
