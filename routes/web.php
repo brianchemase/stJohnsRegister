@@ -44,10 +44,14 @@ Route::group(['prefix' => 'training'], function() {
     Route::get('/RegisterStation', [TrainingController::class, 'registerTrainingStations'])->name('registerTrainingStations');
     Route::post('/register-training-station', [TrainingController::class, 'savetrainingstation'])->name('register.training.station');
 
+    Route::get('/RegisterCourses', [TrainingController::class, 'registerCourses'])->name('registerCourses');
+    Route::post('/register-Courses', [TrainingController::class, 'saveCourses'])->name('register.Courses');
+
     Route::get('/EnrolmentTab', [TrainingController::class, 'StudentEnrolmenttab'])->name('StudentEnrolmenttab');
 
 
     Route::get('/CertifiedStudents', [CertificatesController::class, 'CertificiedStudents'])->name('CertificiedStudents');
+    Route::POST('/RegisterCertifiedStudent', [CertificatesController::class, 'registerCertifiedStudent'])->name('registerCertifiedStudent');
 
     // Route::get('/forms', [DashboardOneController::class, 'form'])->name('dashoneform');
     Route::get('/Table', [TrainingController::class, 'table'])->name('dashonetable');

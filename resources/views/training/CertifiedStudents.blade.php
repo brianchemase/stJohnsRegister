@@ -11,24 +11,24 @@
 
 				@include('training.alerts.alert')
 
-					{{-- <div class="row">
+					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Student Register</h5>
+									<h5 class="card-title mb-0"> Register Certified Student</h5>
 								</div>
 								<div class="card-body">
 									<!-- Button trigger modal -->
 												<button type="button" class="btn btn-success" data-toggle="modal" data-target="#RegisterStudent">
-													Register a Student
+													Register Certified Student
 												</button>
 												
 												<!-- Modal -->
-												@include('training.modals.studentsregister')
+												@include('training.modals.Certifiedstudentsregister')
 								</div>
 							</div>
 						</div>
-					</div> --}}
+					</div>
 
 					<div class="card">
 								<div class="card-header">
@@ -43,7 +43,7 @@
 												<th>Full Names</th>
 												<th>National ID</th>
 												<th>Phone</th>
-												<th>Email</th>
+												<th>Course</th>
 												<th>Status</th>
 												<th>Approval Date</th>
 												<th>Expery Date</th>
@@ -58,7 +58,7 @@
 													<td>{{ $student->full_names }}</td>
 													<td>{{ $student->national_id }}</td>
 													<td>{{ $student->phone }}</td>
-													<td>{{ $student->email }}</td>
+													<td>{{ $student->course_name }}</td>
 													<td>
 														@if ($student->status == 'valid')
 															<button type="button" class="btn btn-success">

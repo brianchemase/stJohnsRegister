@@ -127,6 +127,46 @@ class TrainingController extends Controller
     }
 
 
+    public function registerCourses()
+    {
+        $contributions="";
+        $courses = DB::table('tbl_courses')->get();
+
+        $data=[
+            'contributions' => $contributions,
+            'courses' => $courses,
+
+            
+
+        ];
+
+        return view('training.trainingCourses')->with($data);
+    }
+
+    public function saveCourses(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'course_name' => 'required|string',
+            'course_duration' => 'required|string',
+            'course_cost' => 'required',
+        ]);
+
+        // Insert data into the database using the DB facade
+        try {
+            DB::table('tbl_courses')->insert([
+                'course_name' => $request->input('course_name'),
+                'course_duration' => $request->input('course_duration'),
+                'course_cost' => $request->input('course_cost'),
+            ]);
+
+            return redirect()->back()->with('success', 'Course registered successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error registering Course. Please try again.');
+        }
+    }
+
+
 
 
 
