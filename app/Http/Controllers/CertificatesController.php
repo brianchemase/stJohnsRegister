@@ -165,6 +165,7 @@ class CertificatesController extends Controller
         $contributions="";
         $students = DB::table('certified_members')->get();
         $courses = DB::table('tbl_courses')->get();
+        $stations = DB::table('tbl_training_stations')->get();
         
 
         $students = DB::table('certified_members')
@@ -177,6 +178,7 @@ class CertificatesController extends Controller
             'contributions' => $contributions,
             'students' => $students, 
             'courses' => $courses, 
+            'stations' => $stations, 
             
         ];
 
@@ -193,6 +195,7 @@ class CertificatesController extends Controller
                 'phone' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
                 'approvaldate' => 'required|date',
+                'training_station' => 'required',
                 'course_id' => 'required|exists:tbl_courses,id',
             ]);
 
@@ -207,6 +210,7 @@ class CertificatesController extends Controller
                 'email' => $validatedData['email'],
                 'approvaldate' => $validatedData['approvaldate'],
                 'courseCode' => $validatedData['course_id'],
+                'training_location' => $validatedData['training_station'],
                 'cert_serial' => $certSerial,
                 'status' => "valid",
             ]);

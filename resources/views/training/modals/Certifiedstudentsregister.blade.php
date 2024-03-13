@@ -44,6 +44,16 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="col-md-6">
+                        <label for="validationDefault04" class="form-label">Training Station</label>
+                        <select class="form-select" id="validationDefault04" name="training_station" required>
+                            <option selected disabled value="">Choose...</option>
+                            @foreach($stations as $station)
+                                <option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     
                     													
             </div>
