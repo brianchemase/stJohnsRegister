@@ -200,7 +200,7 @@ class CertificatesController extends Controller
             ]);
 
             // Generate cert_serial
-            $certSerial = 'STJAK' . date('Ymd') . mt_rand(1, 500);
+            $certSerial = 'SJAK' . date('Ymd') . mt_rand(1, 500);
 
             // Insert data into the certified_members table
             DB::table('certified_members')->insert([
