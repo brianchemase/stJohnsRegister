@@ -33,9 +33,11 @@ Route::get('/ViewCert', [CertificatesController::class, 'MakeCertificate']);
 Route::get('/GetCert', [CertificatesController::class, 'getcertificate']);
 Route::post('/GetCerts', [CertificatesController::class, 'getcert'])->name('generate-cert');
 
-
-Route::group(['prefix' => 'training'], function() {
-
+Auth::routes();
+Route::middleware(['user-role:admin'])->group(function()
+//Route::group(['prefix' => 'training', 'auth','user-role:admin'], function() {
+{
+    Route::group(['prefix' => 'training'], function() {
     Route::get('/', [TrainingController::class, 'home'])->name('hometraining');
     Route::get('/StudentsTable', [TrainingController::class, 'Studenttable'])->name('Studentstable');
     Route::post('/students/register', [TrainingController::class, 'registerstudent'])->name('register.student');
@@ -58,7 +60,12 @@ Route::group(['prefix' => 'training'], function() {
     // Route::get('/blank', [TrainingController::class, 'blank'])->name('dashoneblank');
     // Route::get('/formtable', [DashboardOneController::class, 'formtable'])->name('dashoneformtable');
 });
-Auth::routes();
+});
+//}
+
+
+    
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -73,7 +80,7 @@ Route::middleware(['auth','user-role:editor'])->group(function()
     Route::get("/editor/home",[HomeController::class, 'editorHome'])->name("editor.home");
 });
 // Route Admin
-Route::middleware(['auth','user-role:admin'])->group(function()
+Route::middleware(['auth','user-role:training'])->group(function()
 {
     Route::get("/admin/home",[HomeController::class, 'adminHome'])->name("admin.home");
 });

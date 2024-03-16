@@ -42,7 +42,7 @@ class LoginController extends Controller
     {   
         $input = $request->all();
 
-        return $input;
+        //return $input;
      
         $this->validate($request, [
             'email' => 'required|email',
@@ -53,7 +53,7 @@ class LoginController extends Controller
         {
             if (auth()->user()->role == 'admin') 
             {
-              return redirect()->route('admin.home');
+              return redirect()->route('hometraining');
             }
             else if (auth()->user()->role == 'accounts') 
             {

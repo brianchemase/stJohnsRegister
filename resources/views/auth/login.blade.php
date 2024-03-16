@@ -40,6 +40,20 @@
                   {{ Session::get('error') }}
                </div>
               @endif
+
+              @if(Session::has('success'))
+							<div class="alert alert-success">{{Session::get('success')}}</div>
+						@endif
+
+						@if($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
               
               </div>
               <form action="{{ route('login') }}" method="post">
@@ -56,11 +70,11 @@
                 <div class="form-group last mb-3">
                   <label for="password">Password</label>
                   <input type="password" class="form-control" name="password" placeholder="Enter your valid password" id="password" required>
-                    @error('password')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror
+                          @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
                 </div>
                 
                 <div class="d-sm-flex mb-5 align-items-center">
