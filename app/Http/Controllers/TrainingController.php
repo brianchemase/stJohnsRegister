@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class TrainingController extends Controller
 {
@@ -68,6 +70,8 @@ class TrainingController extends Controller
             //'zip' => 'required|string',
         ]);
 
+        //$registeredby=Auth::user()->name;
+
         // Insert data into the database using the DB facade
         try {
             DB::table('tbl_students_data')->insert([
@@ -77,7 +81,7 @@ class TrainingController extends Controller
                 'email' => $request->input('email'),
                 'gender' => $request->input('gender'),
                 'registration_date' => now(), // Assuming you want to save the current date
-                'registered_by' => 'admin', // You might want to get the logged-in user or set it differently
+                'registered_by' => $request->input('registered_by'), // You might want to get the logged-in user or set it differently
             ]);
 
             return redirect()->back()->with('success', 'Student registered successfully.');

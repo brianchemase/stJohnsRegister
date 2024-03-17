@@ -13,6 +13,7 @@
                     <div class="col-md-6">
                         <label for="validationDefault01" class="form-label">Full names</label>
                         <input type="text" class="form-control" id="validationDefault01" name="full_names" placeholder="Enter full names" required>
+                        <input type="hidden" class="form-control" id="validationDefault01" name="registered_by" value="{{ Auth::user()->name }}" required>
                     </div>
                     <div class="col-md-6">
                         <label for="validationDefault02" class="form-label">ID Number</label>

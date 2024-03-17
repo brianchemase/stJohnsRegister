@@ -5,6 +5,7 @@ use App\Http\Controllers\VisitorController;
 
 use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,13 @@ use App\Http\Controllers\TrainingController;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/homepage', function () {
+    return view('staticpages.home');
+}); 
 Route::post('/submit-form', [VisitorController::class, 'store'])->name('submit-form');
+
+Route::any('/updateSelfpass', [UserController::class, 'changeUsersPassword'])->name('changeUsersPassword');
 
 
 
@@ -59,6 +66,12 @@ Route::middleware(['user-role:admin'])->group(function()
     Route::get('/Table', [TrainingController::class, 'table'])->name('dashonetable');
     // Route::get('/blank', [TrainingController::class, 'blank'])->name('dashoneblank');
     // Route::get('/formtable', [DashboardOneController::class, 'formtable'])->name('dashoneformtable');
+
+
+    Route::get('/Listusers', [UserController::class, 'index'])->name('users.index');
+    Route::post('/update-user', [UserController::class, 'updateUser'])->name('update_user');
+    Route::any('/users/{user}/change-password', [UserController::class, 'changePassword'])->name('change_password');
+    Route::post('/Userregister', [UserController::class, 'registerUser'])->name('registerUser');
 });
 });
 //}
