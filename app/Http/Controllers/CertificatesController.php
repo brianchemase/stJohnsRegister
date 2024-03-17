@@ -240,7 +240,7 @@ class CertificatesController extends Controller
             $idnumber=$validatedData['national_id'];
 
 
-            $Notify = $this->Emailcert($idnumber);
+            //$Notify = $this->Emailcert($idnumber);
 
             // If insertion is successful, redirect back with success message
             return redirect()->back()->with('success', 'Certified member registered successfully!');
@@ -257,7 +257,7 @@ class CertificatesController extends Controller
 
         $result = DB::table('certified_members')
         ->where('national_id', $id_no)
-        ->orwhere('cert_serial', $id_no)
+       // ->orwhere('cert_serial', $id_no)
         ->first();
 
         if ($result) {
@@ -272,7 +272,6 @@ class CertificatesController extends Controller
               
                 
                 $serialNo = "Serial No: $cert_serial";
-               
                 $station = "Station";
                
                
@@ -338,6 +337,7 @@ class CertificatesController extends Controller
         // Delete the temporary PDF file
         unlink($pdfFilePath);
            // exit;
+           
     }
 }
 }

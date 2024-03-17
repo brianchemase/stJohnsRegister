@@ -54,7 +54,7 @@
 										<tbody>
 											@foreach ($students as $student)
 												<tr>
-													<td>{{ $student->id }}</td>
+													<td>{{ $loop->iteration }}</td>
 													<td>{{ $student->full_names }}</td>
 													<td>{{ $student->national_id }}</td>
 													<td>{{ $student->phone }}</td>
