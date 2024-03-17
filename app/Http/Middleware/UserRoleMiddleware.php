@@ -24,6 +24,9 @@ class UserRoleMiddleware
             return $next($request);
         }
         
-        return response()->json(['You do not have permission to access for this page.']);
+        //return response()->json(['You do not have permission to access for this page.']);
+        return redirect()
+            ->route('login')
+            ->with('error','You do not have permission to access for this page. Login with the correct account');
     }
 }
