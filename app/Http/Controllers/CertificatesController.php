@@ -225,6 +225,7 @@ class CertificatesController extends Controller
             // Generate cert_serial
             $certSerial = 'SJAK' . date('Ymd') . mt_rand(1, 500);
 
+            
             // Insert data into the certified_members table
             DB::table('certified_members')->insert([
                 'full_names' => $validatedData['full_names'],
@@ -240,7 +241,7 @@ class CertificatesController extends Controller
             $idnumber=$validatedData['national_id'];
 
 
-            //$Notify = $this->Emailcert($idnumber);
+            $Notify = $this->Emailcert($idnumber);
 
             // If insertion is successful, redirect back with success message
             return redirect()->back()->with('success', 'Certified member registered successfully!');
