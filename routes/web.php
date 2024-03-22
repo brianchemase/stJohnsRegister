@@ -18,8 +18,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/qms', function () {
     return view('index');
+});
+Route::get('/', function () {
+    return view('collegelanding');
 });
 
 Route::get('/homepage', function () {
