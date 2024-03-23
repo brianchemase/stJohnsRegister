@@ -40,8 +40,10 @@ Route::get('/visitors', [VisitorController::class, 'showVisitors']);
 
 Route::get('/ViewCert', [CertificatesController::class, 'MakeCertificate']);
 
-Route::get('/GetCert', [CertificatesController::class, 'getcertificate']);
+Route::get('/GetCert', [CertificatesController::class, 'getcertificate'])->name('GetCert');
 Route::post('/GetCerts', [CertificatesController::class, 'getcert'])->name('generate-cert');
+
+Route::get('/send-certification/{idnumbers}', [CertificatesController::class, 'Emailcert']);
 
 Auth::routes();
 Route::middleware(['user-role:admin'])->group(function()

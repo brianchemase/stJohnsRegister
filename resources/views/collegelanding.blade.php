@@ -19,13 +19,7 @@
     <link rel="stylesheet" href="{{asset('landing/assets/css/templatemo-grad-school.css')}}">
     <link rel="stylesheet" href="{{asset('landing/assets/css/owl.css')}}">
     <link rel="stylesheet" href="{{asset('landing/assets/css/lightbox.css')}}">
-<!--
-    
-TemplateMo 557 Grad School
 
-https://templatemo.com/tm-557-grad-school
-
--->
   </head>
 
 <body>
@@ -45,13 +39,13 @@ https://templatemo.com/tm-557-grad-school
             <li><a href="#section2">Who we are?</a></li>
             <li><a href="#section3">What we do?</a></li>
             <li><a href="#section3">How it works?</a></li>
-            <li><a href="https://templatemo.com/about" rel="sponsored" class="external">Staff Login</a></li>
+            <li><a href="{{ route('login') }}" rel="sponsored" class="external">Staff Login</a></li>
           </ul>
         </li>
         <li><a href="#section4">Courses</a></li>
         <!-- <li><a href="#section5">Video</a></li> -->
         <li><a href="#section6">Contact</a></li>
-        <li><a href="https://templatemo.com" class="external">Staff Login</a></li>
+        <li><a href="{{ route('login') }}" class="external">Staff Login</a></li>
       </ul>
     </nav>
   </header>
@@ -101,7 +95,7 @@ https://templatemo.com/tm-557-grad-school
               <div class="content-hide">
                 <p>After sucessfull training and assesment in our variouse certifications, user this link to download and generate your certificate.</p>
                 <p class="hidden-sm">After sucessfull training and assesment in our variouse certifications, user this link to download and generate your certificate.</p>
-                <div class="scroll-to-section"><a class="button" href="#section3">Generate Certiticate</a></div>
+                <div ><a class="button" href="{{ route('GetCert') }}">Generate Certiticate</a></div>
             </div>
             </div>
           </div>
@@ -115,7 +109,7 @@ https://templatemo.com/tm-557-grad-school
               <div class="content-hide">
                 <p>Use this Link to verify the certificate at hand using the Serial number.</p>
                 <p class="hidden-sm">Use this Link to verify the certificate at hand using the Serial number.</p>
-                <div class="scroll-to-section"><a href="#section4">Verify Cerificate</a></div>
+                <div ><a href="{{ route('GetCert') }}">Verify Cerificate</a></div>
             </div>
             </div>
           </div>
@@ -129,7 +123,7 @@ https://templatemo.com/tm-557-grad-school
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>Why choose Grad School?</h2>
+            <h2>Why choose ST John Ambulance Kenya?</h2>
           </div>
         </div>
         <div class="col-md-12">
@@ -137,7 +131,7 @@ https://templatemo.com/tm-557-grad-school
             <ul>
               <li><a href='#tabs-1'>Best Education</a></li>
               <li><a href='#tabs-2'>Top Management</a></li>
-              <li><a href='#tabs-3'>Quality Meeting</a></li>
+              <li><a href='#tabs-3'>Instant Certification</a></li>
             </ul>
             <section class='tabs-content'>
               <article id='tabs-1'>
@@ -166,11 +160,11 @@ https://templatemo.com/tm-557-grad-school
               <article id='tabs-3'>
                 <div class="row">
                   <div class="col-md-6">
-                    <img src="{{asset('landing/assets/images/choose-us-image-03.png')}}" alt="">
+                    <img src="{{asset('landing/assets/images/certification.jpg')}}" alt="">
                   </div>
                   <div class="col-md-6">
-                    <h4>Quality Meeting</h4>
-                    <p>You are NOT allowed to redistribute this template ZIP file on any template collection website. However, you can use this template to convert into a specific theme for any kind of CMS platform such as WordPress. For more information, you shall <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> now.</p>
+                    <h4>Instant Certification</h4>
+                    <p>We at ST John Ambulance take priority in our certifications. We commit to the digital issuance of certifications to our trained qualified students.</p>
                   </div>
                 </div>
               </article>
