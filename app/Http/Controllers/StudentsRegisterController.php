@@ -91,6 +91,32 @@ class StudentsRegisterController extends Controller
         return redirect()->back()->with('success', 'Form submitted successfully');
     }
 
+    public function EnrolledStudentstable()
+    {
+        $contributions="";
+        $students = DB::table('enrollments')->get();
+        $courses = DB::table('tbl_courses')->get();
+        $stations = DB::table('tbl_training_stations')->get();
+
+        $students = DB::table('enrollments')
+            ->join('tbl_courses', 'enrollments.course', '=', 'tbl_courses.id')
+            ->select('enrollments.*', 'tbl_courses.course_name')
+            ->get();
+
+
+        //return $students;
+        
+        $data=[
+            'contributions' => $contributions,
+            'students' => $students, 
+            'courses' => $courses, 
+            'stations' => $stations,
+        ];
+
+        return view('training.studentenrolmenttable')->with($data);
+    }
+
+
     public function anotherFunction() {
         // Assuming you have the required data here
         $phone = '0702230627'; // Example phone number

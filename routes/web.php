@@ -65,6 +65,9 @@ Route::middleware(['user-role:admin'])->group(function()
     Route::post('/students/register', [TrainingController::class, 'registerstudent'])->name('register.student');
 
 
+    Route::get('/StudentsEnrolments', [StudentsRegisterController::class, 'EnrolledStudentstable'])->name('Studentenrolments');
+
+
     Route::get('/RegisterStation', [TrainingController::class, 'registerTrainingStations'])->name('registerTrainingStations');
     Route::post('/register-training-station', [TrainingController::class, 'savetrainingstation'])->name('register.training.station');
 
