@@ -81,7 +81,7 @@
               <div class="content-hide">
                 <p>Register into one of the courses from our career</p>
                 <p class="hidden-sm">Register into one of the courses from our career.</p>
-                <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
+                <div ><a href="{{ route('studentRegister') }}">Enroll Course.</a></div>
             </div>
             </div>
           </div>

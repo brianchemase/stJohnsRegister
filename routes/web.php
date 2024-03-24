@@ -6,6 +6,7 @@ use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentsRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +18,26 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/qms', function () {
-    return view('index');
-});
 Route::get('/', function () {
     return view('collegelanding');
 });
 
+Route::get('/qms', function () {
+    return view('index');
+});
+
+
+
+Route::get('/StudentRegistration', [StudentsRegisterController::class, 'StudentSelfRegister'])->name('studentRegister');
+Route::post('/StudentRegistrationEnrolment', [StudentsRegisterController::class, 'SelfEnrolmentTab'])->name('storeEnrolmentForm');
+Route::get('/payment', [StudentsRegisterController::class, 'anotherFunction'])->name('payment');
+
 Route::get('/homepage', function () {
     return view('staticpages.home');
 }); 
+
+
+
 Route::post('/submit-form', [VisitorController::class, 'store'])->name('submit-form');
 
 Route::any('/updateSelfpass', [UserController::class, 'changeUsersPassword'])->name('changeUsersPassword');
