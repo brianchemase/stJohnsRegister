@@ -97,7 +97,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Sales</h5>
+											<h5 class="card-title">Enrolments</h5>
 										</div>
 
 										<div class="col-auto">
@@ -108,7 +108,7 @@
 											</div>
 										</div>
 									</div>
-									<h1 class="mt-1 mb-3">2.382</h1>
+									<h1 class="mt-1 mb-3">82,000</h1>
 									<div class="mb-0">
 										<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
 										<span class="text-muted">Since last week</span>
@@ -188,131 +188,80 @@
 				</div>
 			</div>
 
-			<div class="col-xl-6 col-xxl-7">
-				<div class="card flex-fill w-100">
-					<div class="card-header">
-						<div class="card-actions float-right">
-							<div class="dropdown show">
-								<a href="#" data-toggle="dropdown" data-display="static">
-									<i class="align-middle" data-feather="more-horizontal"></i>
-								</a>
-
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
-						</div>
-						<h5 class="card-title mb-0">Recent Movement</h5>
-					</div>
-					<div class="card-body py-3">
-						<div class="chart chart-sm">
-							<canvas id="chartjs-dashboard-line"></canvas>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 
-		<div class="row">
-			<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
-				<div class="card flex-fill w-100">
-					<div class="card-header">
-						<div class="card-actions float-right">
-							<div class="dropdown show">
-								<a href="#" data-toggle="dropdown" data-display="static">
-									<i class="align-middle" data-feather="more-horizontal"></i>
-								</a>
 
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
+		<div class="col-12 col-lg-12 col-xxl-12 d-flex">
+			<div class="card flex-fill w-100">
+				<div class="card-header">
+					<div class="card-actions float-right">
+						<div class="dropdown show">
+							<a href="#" data-toggle="dropdown" data-display="static">
+								<i class="align-middle" data-feather="more-horizontal"></i>
+							</a>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
 							</div>
 						</div>
-						<h5 class="card-title mb-0">Browser Usage</h5>
 					</div>
-					<div class="card-body d-flex">
-						<div class="align-self-center w-100">
-							<div class="py-3">
-								<div class="chart chart-xs">
-									<canvas id="chartjs-dashboard-pie"></canvas>
-								</div>
-							</div>
-
-							<table class="table mb-0">
-								<tbody>
-									<tr>
-										<td><i class="fas fa-circle text-primary fa-fw"></i> Chrome</td>
-										<td class="text-right">4306</td>
-									</tr>
-									<tr>
-										<td><i class="fas fa-circle text-warning fa-fw"></i> Firefox</td>
-										<td class="text-right">3801</td>
-									</tr>
-									<tr>
-										<td><i class="fas fa-circle text-danger fa-fw"></i> IE</td>
-										<td class="text-right">1689</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+					<h5 class="card-title mb-0"><strong>Certification Summary 2024</strong></h5>
+				</div>
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						var chartData = @json(array_values($monthlyData));
+						// Bar chart
+						new Chart(document.getElementById("chartjs-dashboard-bar"), {
+							type: "bar",
+							data: {
+								labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+								datasets: [{
+									label: "Certifications",
+									backgroundColor: window.theme.success,
+									borderColor: window.theme.warning,
+									hoverBackgroundColor: window.theme.secondary,
+									hoverBorderColor: window.theme.success,
+									data: chartData,
+									barPercentage: .85,
+									categoryPercentage: .5
+								}]
+							},
+							options: {
+								maintainAspectRatio: false,
+								legend: {
+									display: false
+								},
+								scales: {
+									yAxes: [{
+										gridLines: {
+											display: false
+										},
+										stacked: false,
+										ticks: {
+											stepSize: 20
+										}
+									}],
+									xAxes: [{
+										stacked: false,
+										gridLines: {
+											color: "transparent"
+										}
+									}]
+								}
+							}
+						});
+					});
+				</script>
+				<div class="card-body d-flex w-100">
+					<div class="align-self-center chart chart-lg">
+						<canvas id="chartjs-dashboard-bar"></canvas>
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-12 col-xxl-6 d-flex order-3 order-xxl-2">
-				<div class="card flex-fill w-100">
-					<div class="card-header">
-						<div class="card-actions float-right">
-							<div class="dropdown show">
-								<a href="#" data-toggle="dropdown" data-display="static">
-									<i class="align-middle" data-feather="more-horizontal"></i>
-								</a>
-
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
-						</div>
-						<h5 class="card-title mb-0">Real-Time</h5>
-					</div>
-					<div class="card-body px-4">
-						<div id="world_map" style="height:350px;"></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
-				<div class="card flex-fill">
-					<div class="card-header">
-						<div class="card-actions float-right">
-							<div class="dropdown show">
-								<a href="#" data-toggle="dropdown" data-display="static">
-									<i class="align-middle" data-feather="more-horizontal"></i>
-								</a>
-
-								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
-						</div>
-						<h5 class="card-title mb-0">Calendar</h5>
-					</div>
-					<div class="card-body d-flex">
-						<div class="align-self-center w-100">
-							<div class="chart">
-								<div id="datetimepicker-dashboard"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	</div>
 
 		<div class="row">
 			<div class="col-12 col-lg-8 col-xxl-9 d-flex">
