@@ -88,110 +88,71 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-xl-6 col-xxl-5 d-flex">
-				<div class="w-100">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Enrolments</h5>
-										</div>
-
-										<div class="col-auto">
-											<div class="avatar">
-												<div class="avatar-title rounded-circle bg-primary-light">
-													<i class="align-middle" data-feather="truck"></i>
-												</div>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">82,000</h1>
-									<div class="mb-0">
-										<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-										<span class="text-muted">Since last week</span>
-									</div>
-								</div>
+		<div class="col-md-12">
+			<div class="row ">
+				<div class="col-xl-4 col-lg-6" data-tilt>
+					<div class="card l-bg-cherry">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large"><i class="fas fa-user-alt"></i></div>
+							<div class="mb-4">
+								<h5 class="card-title mb-0" style="color: white;">Students Enrolments</h5>
 							</div>
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Visitors</h5>
-										</div>
-
-										<div class="col-auto">
-											<div class="avatar">
-												<div class="avatar-title rounded-circle bg-primary-light">
-													<i class="align-middle" data-feather="users"></i>
-												</div>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">14.212</h1>
-									<div class="mb-0">
-										<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
-										<span class="text-muted">Since last week</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Earnings</h5>
-										</div>
-
-										<div class="col-auto">
-											<div class="avatar">
-												<div class="avatar-title rounded-circle bg-primary-light">
-													<i class="align-middle" data-feather="dollar-sign"></i>
-												</div>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">$21.300</h1>
-									<div class="mb-0">
-										<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-										<span class="text-muted">Since last week</span>
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Orders</h5>
-										</div>
-
-										<div class="col-auto">
-											<div class="avatar">
-												<div class="avatar-title rounded-circle bg-primary-light">
-													<i class="align-middle" data-feather="shopping-cart"></i>
-												</div>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">64</h1>
-									<div class="mb-0">
-										<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
-										<span class="text-muted">Since last week</span>
-									</div>
+							<div class="row align-items-center mb-2 d-flex">
+								<div class="col-8">
+									<h2 class="d-flex align-items-center mb-0" style="color: white;">
+										{{ number_format($enrollments) }} Students
+									</h2>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+				<div class="col-xl-4 col-lg-6" data-tilt>
+					<div class="card l-bg-cherry">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+							<div class="mb-4">
+								<h5 class="card-title mb-0" style="color: white;">Certificates offered</h5>
+							</div>
+							<div class="row align-items-center mb-2 d-flex">
+								<div class="col-8">
+									<h2 class="d-flex align-items-center mb-0" style="color: white;">
+										 {{ number_format($certified_members) }}
+									</h2>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
 
-			
+				
+
+				<div class="col-xl-4 col-lg-6" data-tilt>
+					<div class="card l-bg-green-dark">
+						<div class="card-statistic-3 p-4">
+							<div class="card-icon card-icon-large"><i class="fas fa-mobile-alt"></i></div>
+							<div class="mb-4">
+								<h5 class="card-title mb-0" style="color: white;">Courses Registered</h5>
+							</div>
+							<div class="row align-items-center mb-2 d-flex">
+								<div class="col-8">
+									<h2 class="d-flex align-items-center mb-0" style="color: white;">
+									{{ number_format($courses_registered) }}
+									</h2>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
-
+	
 		<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 			<div class="card flex-fill w-100">
 				<div class="card-header">

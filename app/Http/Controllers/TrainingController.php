@@ -17,6 +17,9 @@ class TrainingController extends Controller
         $students = DB::table('tbl_students_data')->get();
         $totalStudentsRegistered = DB::table('tbl_students_data')->count();
         $trainingStations = DB::table('tbl_training_stations')->count();
+        $courses_registered = DB::table('tbl_courses')->count();
+        $enrollments = DB::table('enrollments')->count();
+        $certified_members = DB::table('certified_members')->count();
 
 
        
@@ -56,7 +59,9 @@ class TrainingController extends Controller
             'totalStudentsRegistered' => $totalStudentsRegistered,
             'trainingStations' => $trainingStations,
             'monthlyData' => $monthlyData,
-            
+            'courses_registered' => $courses_registered,
+            'enrollments' => $enrollments,
+            'certified_members' => $certified_members,
 
         ];
 
