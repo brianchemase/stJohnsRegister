@@ -7,6 +7,7 @@ use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentsRegisterController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/qms', function () {
     return view('index');
 });
 
+Route::get('/Paybillpayment', [TransactionController::class, 'index'])->name('paybillpayment');
 
 
 Route::get('/StudentRegistration', [StudentsRegisterController::class, 'StudentSelfRegister'])->name('studentRegister');
