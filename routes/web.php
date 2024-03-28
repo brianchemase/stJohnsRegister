@@ -6,6 +6,7 @@ use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentsRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,26 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+    return view('collegelanding');
+});
+
+Route::get('/qms', function () {
     return view('index');
 });
+
+
+
+Route::get('/StudentRegistration', [StudentsRegisterController::class, 'StudentSelfRegister'])->name('studentRegister');
+Route::post('/StudentRegistrationEnrolment', [StudentsRegisterController::class, 'SelfEnrolmentTab'])->name('storeEnrolmentForm');
+Route::get('/payment', [StudentsRegisterController::class, 'anotherFunction'])->name('payment');
 
 Route::get('/homepage', function () {
     return view('staticpages.home');
 }); 
+
+
+
 Route::post('/submit-form', [VisitorController::class, 'store'])->name('submit-form');
 
 Route::any('/updateSelfpass', [UserController::class, 'changeUsersPassword'])->name('changeUsersPassword');
@@ -37,8 +50,10 @@ Route::get('/visitors', [VisitorController::class, 'showVisitors']);
 
 Route::get('/ViewCert', [CertificatesController::class, 'MakeCertificate']);
 
-Route::get('/GetCert', [CertificatesController::class, 'getcertificate']);
+Route::get('/GetCert', [CertificatesController::class, 'getcertificate'])->name('GetCert');
 Route::post('/GetCerts', [CertificatesController::class, 'getcert'])->name('generate-cert');
+
+Route::get('/send-certification/{idnumbers}', [CertificatesController::class, 'Emailcert']);
 
 Auth::routes();
 Route::middleware(['user-role:admin'])->group(function()
@@ -48,6 +63,9 @@ Route::middleware(['user-role:admin'])->group(function()
     Route::get('/', [TrainingController::class, 'home'])->name('hometraining');
     Route::get('/StudentsTable', [TrainingController::class, 'Studenttable'])->name('Studentstable');
     Route::post('/students/register', [TrainingController::class, 'registerstudent'])->name('register.student');
+
+
+    Route::get('/StudentsEnrolments', [StudentsRegisterController::class, 'EnrolledStudentstable'])->name('Studentenrolments');
 
 
     Route::get('/RegisterStation', [TrainingController::class, 'registerTrainingStations'])->name('registerTrainingStations');

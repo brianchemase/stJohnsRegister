@@ -19,7 +19,7 @@ class CertificatesController extends Controller
         $text="Text";
 
              $id_no ="123456" ;
-             $client_names = "Dennis Matara";
+             $client_names = "Anikayi Bramuel";
             $serialNo = "Serial No: 255255";
             $personalNo = "2023123456";
             $station = "Station";
@@ -73,6 +73,7 @@ class CertificatesController extends Controller
        //$pdf->Output();
        // Save the PDF to a temporary file
        $email="brianchemo@yopmail.com";
+       $email="anikayibramuel@gmail.com";
        // Define the directory path to save the PDF
        $pdfDirectory = storage_path('app/temp');
         
@@ -224,6 +225,11 @@ class CertificatesController extends Controller
 
             // Generate cert_serial
             $certSerial = 'SJAK' . date('Ymd') . mt_rand(1, 500);
+            // Retrieve the approval date from the validated data
+            $approvalDate = $validatedData['approvaldate'];
+
+            // Calculate the expiration date one year after the approval date
+            $expirationDate = date('Y-m-d', strtotime('+1 year', strtotime($approvalDate)));
 
             
             // Insert data into the certified_members table
@@ -233,6 +239,7 @@ class CertificatesController extends Controller
                 'phone' => $validatedData['phone'],
                 'email' => $validatedData['email'],
                 'approvaldate' => $validatedData['approvaldate'],
+                'experydate' =>  $expirationDate,
                 'courseCode' => $validatedData['course_id'],
                 'training_location' => $validatedData['training_station'],
                 'cert_serial' => $certSerial,
@@ -269,6 +276,7 @@ class CertificatesController extends Controller
             $email = $result->email;
             $training_location = $result->training_location;
             $cert_serial = $result->cert_serial;
+            $experyDate = $result->experydate;
 
               
                 

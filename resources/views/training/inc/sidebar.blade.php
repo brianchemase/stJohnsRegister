@@ -27,7 +27,7 @@
                 </a>
                 <ul id="training" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('Studentstable')}}">Students Registration</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('StudentEnrolmenttab')}}">Student Enrolment </a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{route('Studentenrolments')}}">Student Enrolment </a></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('registerTrainingStations')}}">Training Station Registration </a></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="{{route('registerCourses')}}">Training Course Registration </a></li>
                     

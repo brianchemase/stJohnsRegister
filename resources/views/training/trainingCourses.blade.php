@@ -34,6 +34,7 @@
 											<label for="course_duration" class="form-label">Course duration</label>
 											<select class="form-select" id="course_duration" name="course_duration" required>
 												<option selected disabled value="">Choose...</option>
+												<option value="2 Days">2 Days</option>
 												<option value="1 week">1 Week</option>
 												<option value="1 month">1 Month</option>
 												<option value="2 months">2 Months</option>
